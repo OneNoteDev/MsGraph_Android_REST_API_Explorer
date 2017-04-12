@@ -193,7 +193,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                     public void request(NotebooksService service, Callback callback) {
                         service.getSharedNotebooks(
                                 getVersion(),
-                                "userRole ne Microsoft.OneNote.Api.UserRole'Owner'", // filter
+                                "userRole ne 'Owner'", // filter
                                 null, // orderby
                                 null, // select
                                 null, //expand
