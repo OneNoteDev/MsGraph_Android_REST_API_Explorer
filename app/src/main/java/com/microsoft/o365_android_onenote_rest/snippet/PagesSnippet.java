@@ -713,26 +713,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                                 callback);
                     }
                 },
-
-//                /*
-//                 * GET a collection of pages whose subject or content contains the search text
-//                 * @see http://dev.onenote.com/docs#/reference/get-pages/v10menotespagesfilterorderbyselecttopskipsearchcount
-//                 */
-//                new PagesSnippet<Envelope<Page>>(search_all_pages, Input.Text) {
-//                    @Override
-//                    public void request(PagesService service, Callback<Envelope<Page>> callback) {
-//                        Map<String, String> params = callback.getParams();
-//                        service.getPages(
-//                                getVersion(),
-//                                null,
-//                                null,
-//                                null,
-//                                null,
-//                                null,
-//                                params.get(SnippetDetailFragment.ARG_TEXT_INPUT),
-//                                callback);
-//                    }
-//                },
+                
 
                 /*
                  * GET a page from the user's page collection for specific id
