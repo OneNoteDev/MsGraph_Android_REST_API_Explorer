@@ -713,7 +713,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                                 callback);
                     }
                 },
-                
+
 
                 /*
                  * GET a page from the user's page collection for specific id
