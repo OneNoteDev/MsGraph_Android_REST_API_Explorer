@@ -1,7 +1,5 @@
-Android-REST-API-Explorer
-=========================
-
-[![Build Status](https://travis-ci.org/OneNoteDev/Android-REST-API-Explorer.svg?branch=master)](https://travis-ci.org/OneNoteDev/Android-REST-API-Explorer)
+MsGraph_Android_REST_API_Explorer
+=================================
 
 **Table of contents**
 
@@ -17,7 +15,9 @@ Android-REST-API-Explorer
 -	[Questions and comments](#questions-and-comments)
 -	[Additional resources](#additional-resources)
 
-Looking to build cool apps that help people work with their OneNote notebooks? Explore, learn, and understand the OneNote REST APIs by using the OneNote REST API Explorer for Android. This sample lets you view and run the REST APIs that read, add, update, and delete OneNote entities such as notebooks, section groups, sections, and pages. The app lets you authenticate in two ways. You can authenticate using a Microsoft Account (MSA) to connect to OneNote on your personal OneDrive. Or you can authenticate using a work or school account to connect to OneNote on your organization's OneDrive for Business on Office 365.
+Looking to build cool apps that help people work with their OneNote notebooks? Explore, learn, and understand the OneNote REST endpoints through the Microsoft Graph API by using the MS Graph OneNote REST API Explorer for Android. This sample lets you view and run the REST APIs that read, add, update, and delete OneNote entities such as notebooks, section groups, sections, and pages. The app lets you authenticate in two ways. You can authenticate using a Microsoft Account\** (MSA) to connect to OneNote on your personal OneDrive. Or you can authenticate using a work or school account to connect to OneNote on your organization's OneDrive for Business on Office 365.
+
+\** The OneNote API endpoints currently support requests via a user authorized via an AAD (work or school) account.
 
 You can explore the following operations for OneNote:
 
@@ -68,8 +68,9 @@ You can explore the following operations for OneNote:
 -	Get a sorted list of pages
 -	Get the HTML contents of a page
 
-Change History
---------------
+### <a name="chang-history"></a>Change History
+
+---
 
 August 2015* Add "Create section group" and "Create section in a section group" calls.
 
