@@ -14,11 +14,10 @@
 /.idea/workspace.xml
 /build
 /captures
-/gradle
+/gradlew.bat
 /local.properties
 Thumbs.db
 bin/
 build/
 gen/
-gradle/
 out/
