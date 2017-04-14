@@ -12,3 +12,8 @@ jdk:
 
 script:
   - ./gradlew clean build --stracktrace
+
+licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
