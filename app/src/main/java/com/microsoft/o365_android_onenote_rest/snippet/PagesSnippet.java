@@ -51,7 +51,6 @@ import static com.microsoft.o365_android_onenote_rest.R.array.meta_specific_page
 import static com.microsoft.o365_android_onenote_rest.R.array.page_append;
 import static com.microsoft.o365_android_onenote_rest.R.array.pages_selected_meta;
 import static com.microsoft.o365_android_onenote_rest.R.array.pages_specific_section;
-import static com.microsoft.o365_android_onenote_rest.R.array.search_all_pages;
 import static com.microsoft.o365_android_onenote_rest.R.array.specific_title;
 
 public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService, Result> {
