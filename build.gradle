@@ -17,3 +17,8 @@ allprojects {
         jcenter()
     }
 }
+
+configurations.all {
+    resolutionStrategy.force 'com.android.support:appcompat-v7:22.1.1'
+    resolutionStrategy.force 'com.android.support:support-v13:22.1.1'
+}
