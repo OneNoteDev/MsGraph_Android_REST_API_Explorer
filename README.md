@@ -71,11 +71,14 @@ You can explore the following operations for OneNote:
 Change History
 --------------
 
-April 2017 - Requests now target the Microsoft Graph API.
+April 2017 
+- Requests now target the Microsoft Graph API.
 
-August 2015 - Add "Create section group" and "Create section in a section group" calls.
+August 2015 
+- Add "Create section group" and "Create section in a section group" calls.
 
-July 2015: - Initial release.
+July 2015: 
+- Initial release.
 
 Device requirements
 -------------------
