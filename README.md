@@ -92,7 +92,8 @@ To use the Microsoft Graph OneNote REST API Explorer for Android, you need the f
 - The [Gradle](http://www.gradle.org) build automation system version 2.3.1 or later. 
 - An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&DL=DEVELOPERPACK&ali=1#0) that includes the resources you need to start building Office 365 apps. 
 - [Java Development Kit (JDK) 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). 
-- A registered Azure application with a client id and redirect URI value. The application must have the following permissions:   - View and modify OneNote notebooks in your organization 
+- A registered Azure application with a client id and redirect URI value. The application must have the following permissions:   
+  - View and modify OneNote notebooks in your organization 
   - View and modify OneNote notebooks 
   - Create pages in OneNote notebooks 
   - Sign you in and read your profile 
