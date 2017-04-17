@@ -51,7 +51,6 @@ import static com.microsoft.o365_android_onenote_rest.R.array.meta_specific_page
 import static com.microsoft.o365_android_onenote_rest.R.array.page_append;
 import static com.microsoft.o365_android_onenote_rest.R.array.pages_selected_meta;
 import static com.microsoft.o365_android_onenote_rest.R.array.pages_specific_section;
-import static com.microsoft.o365_android_onenote_rest.R.array.search_all_pages;
 import static com.microsoft.o365_android_onenote_rest.R.array.specific_title;
 
 public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService, Result> {
@@ -78,7 +77,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * POST a new OneNote page in the section picked by the user
-                 * HTTP POST https://www.onenote.com/api/beta/me/notes/sections/{id}/pages
+                 * HTTP POST https://graph.microsoft.com/beta/me/notes/sections/{id}/pages
                  * @see http://dev.onenote.com/docs#/reference/post-pages
                  */
                 new PagesSnippet<Page>(create_simple_page, Input.Spinner) {
@@ -124,7 +123,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * Creates a new page in a section referenced by title instead of Id
-                 * HTTP POST https://www.onenote.com/api/beta/me/notes/pages{?sectionName}
+                 * HTTP POST https://graph.microsoft.com/beta/me/notes/pages{?sectionName}
                  * @see http://dev.onenote.com/docs#/reference/post-pages/v10menotespagessectionname
                  */
                 new PagesSnippet<Envelope<Page>>(create_page_under_named_section, Input.Spinner) {
@@ -714,25 +713,6 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                     }
                 },
 
-                /*
-                 * GET a collection of pages whose subject or content contains the search text
-                 * @see http://dev.onenote.com/docs#/reference/get-pages/v10menotespagesfilterorderbyselecttopskipsearchcount
-                 */
-                new PagesSnippet<Envelope<Page>>(search_all_pages, Input.Text) {
-                    @Override
-                    public void request(PagesService service, Callback<Envelope<Page>> callback) {
-                        Map<String, String> params = callback.getParams();
-                        service.getPages(
-                                getVersion(),
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                params.get(SnippetDetailFragment.ARG_TEXT_INPUT),
-                                callback);
-                    }
-                },
 
                 /*
                  * GET a page from the user's page collection for specific id
@@ -932,7 +912,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

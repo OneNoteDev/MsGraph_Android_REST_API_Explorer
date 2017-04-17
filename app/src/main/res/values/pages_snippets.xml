@@ -147,14 +147,6 @@
         <item>v1.0</item>
     </string-array>
 
-    <string-array name="search_all_pages">
-        <item>GET: Search all pages</item>
-        <item>Search all pages and return the paginated list of matching pages that contain the given search term (case-insensitive search)</item>
-        <item>http://dev.onenote.com/docs#/reference/get-pages</item>
-        <item>beta</item>
-        <item>v1.0</item>
-    </string-array>
-
     <string-array name="get_page_as_html">
         <item>GET: Recall a page\'s content as HTML</item>
         <item>First we get a paginated list of all pages and then return back the content of one of the selected pages as HTML</item>
