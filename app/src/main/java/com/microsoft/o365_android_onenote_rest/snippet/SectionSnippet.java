@@ -83,7 +83,7 @@ public abstract class SectionSnippet<Result>
 
                 /*
                  * Gets all of the sections in the user's default notebook
-                 * HTTP GET https://www.onenote.com/api/beta/me/notes/sections
+                 * HTTP GET https://graph.microsoft.com/beta/me/notes/sections
                  */
                 new SectionSnippet<Envelope<Section>>(get_all_sections) {
                     @Override
@@ -102,7 +102,7 @@ public abstract class SectionSnippet<Result>
 
                 /*
                  * Gets any section whose title matches the given title
-                 * HTTP GET https://www.onenote.com/api/beta/me/notes/sections?filter=name+eq+%27{1}%27
+                 * HTTP GET https://graph.microsoft.com/beta/me/notes/sections?filter=name+eq+%27{1}%27
                  */
                 new SectionSnippet<Envelope<Section>>(sections_specific_name, Input.Text) {
 
@@ -358,7 +358,7 @@ public abstract class SectionSnippet<Result>
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

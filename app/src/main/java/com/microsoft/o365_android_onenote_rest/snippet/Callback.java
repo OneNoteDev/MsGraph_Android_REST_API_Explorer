@@ -11,7 +11,7 @@ public interface Callback<T> extends retrofit.Callback<T> {
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

@@ -70,7 +70,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                  */
                 new NotebookSnippet(get_notebooks_expand) {
                     /*
-                    https://www.onenote.com/api/beta/me/notes/notebooks?$expand=sections,sectionGroups($expand=sections)
+                    https://graph.microsoft.com/beta/me/notes/notebooks?$expand=sections,sectionGroups($expand=sections)
                      */
                     @Override
                     public void request(NotebooksService service, Callback callback) {
@@ -283,7 +283,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

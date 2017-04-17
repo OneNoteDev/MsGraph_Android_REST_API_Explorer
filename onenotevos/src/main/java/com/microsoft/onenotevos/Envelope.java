@@ -9,7 +9,7 @@ public class Envelope<T> extends BaseVO {
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

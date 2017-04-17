@@ -187,14 +187,14 @@ The REST API Explorer project uses these classes to manage interactions with One
 
 ### Sample project organization
 
-The REST API explorer project is comprised of four modules. The modular design allows you to add authentication and OneNote REST API support to your app by importing modules from REST API Explorer into your app. After you've imported the modules, use the code in the REST API Explorer [app](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/app) module as an example of how to call methods in the other sample modules.
+The REST API explorer project is comprised of four modules. The modular design allows you to add authentication and OneNote REST API support to your app by importing modules from REST API Explorer into your app. After you've imported the modules, use the code in the REST API Explorer [app](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/app) module as an example of how to call methods in the other sample modules.
 
 ### REST API Explorer modules
 
--	[`O365-Auth`](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/O365-auth). This module contains the library calls to authenticate a user with Office 365.
--	[`onenoteapi`](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/onenoteapi). This module encapsulates the Retrofit REST operations used for the OneNote (enterprise and consumer) endpoints.
--	[`onenotevos`](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/onenotevos). This module provides the value objects that wrap deserialized JSON REST response payloads. Use the value objects in your app logic to get the metadata and content of OneDrive notebooks, sections, and pages returned by the API.
--	[`app`](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/app). The REST API explorer UI and business logic module. REST API Explorer consumes the **api** and **vo** modules from the logic in the app module. REST operations are started in the snippet classes in this module.
+-	[`O365-Auth`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/O365-auth). This module contains the library calls to authenticate a user with Office 365.
+-	[`onenoteapi`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/onenoteapi). This module encapsulates the Retrofit REST operations used for the OneNote (enterprise and consumer) endpoints.
+-	[`onenotevos`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/onenotevos). This module provides the value objects that wrap deserialized JSON REST response payloads. Use the value objects in your app logic to get the metadata and content of OneDrive notebooks, sections, and pages returned by the API.
+-	[`app`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/app). The REST API explorer UI and business logic module. REST API Explorer consumes the **api** and **vo** modules from the logic in the app module. REST operations are started in the snippet classes in this module.
 
 ### Snippet classes
 

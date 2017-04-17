@@ -77,7 +77,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * POST a new OneNote page in the section picked by the user
-                 * HTTP POST https://www.onenote.com/api/beta/me/notes/sections/{id}/pages
+                 * HTTP POST https://graph.microsoft.com/beta/me/notes/sections/{id}/pages
                  * @see http://dev.onenote.com/docs#/reference/post-pages
                  */
                 new PagesSnippet<Page>(create_simple_page, Input.Spinner) {
@@ -123,7 +123,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * Creates a new page in a section referenced by title instead of Id
-                 * HTTP POST https://www.onenote.com/api/beta/me/notes/pages{?sectionName}
+                 * HTTP POST https://graph.microsoft.com/beta/me/notes/pages{?sectionName}
                  * @see http://dev.onenote.com/docs#/reference/post-pages/v10menotespagessectionname
                  */
                 new PagesSnippet<Envelope<Page>>(create_page_under_named_section, Input.Spinner) {
@@ -912,7 +912,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 }
 // *********************************************************
 //
-// Android-REST-API-Explorer, https://github.com/OneNoteDev/Android-REST-API-Explorer
+// MsGraph_Android_REST_API_Explorer, https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
