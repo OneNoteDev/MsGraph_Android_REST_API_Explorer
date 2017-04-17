@@ -83,7 +83,8 @@ July 2015:
 Device requirements
 -------------------
 
-To run the REST Explorer project, your device must meet the following requirements:* Android API level 23 or newer
+To run the REST Explorer project, your device must meet the following requirements:
+- Android API level 23 or newer
 
 ### Prerequisites
 
