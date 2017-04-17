@@ -17,7 +17,7 @@ MsGraph_Android_REST_API_Explorer
 
 Looking to build cool apps that help people work with their OneNote notebooks? Explore, learn, and understand the OneNote REST endpoints through the Microsoft Graph API by using the MS Graph OneNote REST API Explorer for Android. This sample lets you view and run the REST APIs that read, add, update, and delete OneNote entities such as notebooks, section groups, sections, and pages. The app lets you authenticate in two ways. You can authenticate using a Microsoft Account\** (MSA) to connect to OneNote on your personal OneDrive. Or you can authenticate using a work or school account to connect to OneNote on your organization's OneDrive for Business on Office 365.
 
-\** The OneNote API endpoints currently support requests via a user authorized via an AAD (work or school) account.
+\** The OneNote API endpoints currently support requests via a user authorized via an AAD (work or school) account. Support for access to the OneNote endpoints via an authenticated MSA account is upcoming.
 
 You can explore the following operations for OneNote:
 
@@ -68,50 +68,56 @@ You can explore the following operations for OneNote:
 -	Get a sorted list of pages
 -	Get the HTML contents of a page
 
-### <a name="chang-history"></a>Change History
+Change History
+--------------
 
----
+April 2017* Requests now target the Microsoft Graph API.
 
 August 2015* Add "Create section group" and "Create section in a section group" calls.
 
-July 2015:* Initial release
+July 2015:* Initial release.
 
 Device requirements
 -------------------
 
-To run the REST Explorer project, your device must meet the following requirements:* Android API level 16 or newer
+To run the REST Explorer project, your device must meet the following requirements:* Android API level 23 or newer
 
 ### Prerequisites
 
-To use the OneNote REST API Explorer for Android, you need the following:* The latest version of [Android Studio](http://developer.android.com/sdk/index.html).* the [Gradle](http://www.gradle.org) build automation system version 2.2.1 or later.* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&DL=DEVELOPERPACK&ali=1#0) that includes the resources you need to start building Office 365 apps.* [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).* A registered Azure application with a client id and redirect URI value. The application must have the following permissions: * View and modify OneNote notebooks in your organization * View and modify OneNote notebooks * Create pages in OneNote notebooks * Sign you in and read your profile * Access your organization's directory* A registered Microsoft application with a client id.
+To use the Microsoft Graph OneNote REST API Explorer for Android, you need the following:* The latest version of [Android Studio](http://developer.android.com/sdk/index.html).* The [Gradle](http://www.gradle.org) build automation system version 2.3.1 or later.* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&DL=DEVELOPERPACK&ali=1#0) that includes the resources you need to start building Office 365 apps.* [Java Development Kit (JDK) 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).* A registered Azure application with a client id and redirect URI value. The application must have the following permissions: * View and modify OneNote notebooks in your organization * View and modify OneNote notebooks * Create pages in OneNote notebooks * Sign you in and read your profile * Access your organization's directory * A registered Microsoft application with a client id.
 
 Azure client application registration
 -------------------------------------
 
 1.	Sign in to the [Azure Management Portal](https://manage.windowsazure.com), using your Azure AD credentials.
-2.	Click **Active Directory** on the left menu, then select the directory for your Office 365 developer site.
-3.	On the top menu, click **Applications**.
-4.	Click **Add** from the bottom menu.
-5.	On the **What do you want to do page**, click **Add an application my organization is developing**.
-6.	On the **Tell us about your application page**, specify **OneNote REST API Explorer** for the application name and select **NATIVE CLIENT APPLICATION** for type.
-7.	Click the arrow icon on the bottom-right corner of the page.
-8.	On the **Application information** page, specify a **Redirect URI**, for this example, you can specify http://localhost/OneNoteRESTExplorer, and then select the checkbox in the lower-right hand corner of the page. Remember this value for the below section **Getting the ClientID and RedirectUri into the project**.
-9.	Once the application has been successfully added, you will be taken to the **Quick Start** page for the application. From here, select **Configure** in the top menu.
-10.	Under **permissions to other applications**, select **Add application.** Select OneNote and then the check box to proceed.
-11.	For the **OneNote** application add the following permissions:
 
-	-	View and modify OneNote notebooks in your organization
-	-	View and modify OneNote notebooks
-	-	Create pages in OneNote notebooks ![Choose OneNote permissions required for your application.](/readme-images/OneNotePermissions.jpg)
+2.	Choose your Azure AD tenant by selecting your account in the top right corner of the page.
 
-12.	For the **Windows Azure Active Directory** application add or make sure the following permissions are enabled:
+3.	In the left-hand navigation pane, choose **More Services**, click **App Registrations**, and click **New application registration**.
 
-	-	Enable sign-on and read users' profiles
-	-	Access your organization's directory ![Choose Azure Active Directory permissions required for your application.](/readme-images/AADPermissions.jpg)
+4.	On the **Create** page, specify **MS Graph OneNote REST API Explorer** for the application name and select **Native** for application type. Specify a **Redirect URI**, for this example, you can specify http://localhost/OneNoteRESTExplorer.
 
-13.	Copy the value specified for **Client ID** on the **Configure** page. Remember this value for the below section **Getting the ClientID and RedirectUri into the project**.
+5.	Click **Create**.
 
-14.	Click **Save** in the bottom menu.
+6.	Click on the newly created app and copy the **Application ID**. You will need this value and the **Redirect URI** when configuring the application, in the **Getting the ClientID and RedirectUri into the project** section.
+
+7.	From the settings page, select **Required Permissions**.
+
+8.	Click on the **Windows Azure Active Directory** API.
+
+9.	In the **Select Permissions** tab, under **Delegated Permissions**, select the following permissions:
+
+	-	Sign in and read user profile
+	-	Access the directory as the signed-in user
+
+10.	Navigate back to the **Required Permissions** tab and click **Add**.
+
+11.	Click **Select an API** and search for **Microsoft Graph**. Click **Select**.
+
+12.	Under the **Select Permissions** tab, in the **Delegated permissions** section, add the following permissions:
+
+	-	Read and write notebooks that the user can access
+	-	View users' basic profile.
 
 Microsoft account application registration
 ------------------------------------------
@@ -120,26 +126,25 @@ Microsoft account application registration
 
 2.	Sign in by using your Windows Live ID. >Note: If this is your first visit to this site, you will see several pages that configure your Windows Live ID for use with the site.
 
-3.	Click **Create application**.
+3.	Click **Add an app**.
 
-4.	Enter a unique application name. If you agree to the terms, click **Accept**.
+4.	Enter a unique application name and **Create application**.
 
-5.	There are many settings for your app, but to make it work with this sample, you need to make the following changes:
+5.	There are many settings for your app, but to make it work with this sample, you need to make the following change:
 
-	1.	On **API Settings**, set the **Mobile or desktop client app** field to **Yes**.
-	2.	On **API Settings**, set the **Redirect URLs** field to a valid URL. The URL does not need to reference an actual location, but it must be a valid URL.
+	-	In the **Platforms** section, click **Add Platform** followed by **Mobile Application**.
 
 6.	Once you are satisfied with your app settings, click **Save**.
 
-7.	Click **App Settings**. This will display a page with your client id. You will use this value later when configuring your project.
+7.	Take note of the **Application Id** listed near the top of the page. You will use this value later when configuring your project.
 
 Configure the project
 ---------------------
 
-1.	Download or clone the [OneNote REST API Explorer for Android](https://github.com/OneNoteDev/Android-REST-API-Explorer).
+1.	Download or clone the [Microsoft Graph OneNote REST API Explorer for Android](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer).
 2.	Start Android Studio.
 3.	From the **Welcome to Android Studio** dialog box, choose **Import project (Eclipse ADT, Gradle, etc)**.
-4.	Select the **settings.gradle** file in the **Android-REST-API-Explorer** folder and click **OK**.
+4.	Select the **settings.gradle** file in the **MSGraph_OneNoteApiSampleAndroid** folder and click **OK**.
 5.	Respond to the dialog ("Gradle Sync: Gradle settings for this project are not configured yet. Would you like the project to use the Gradle wrapper? ") by clicking the **OK** button to use the Gradle wrapper.
 6.	Open the ServiceConstants.java file in the com.microsoft.o365_android_onenote_rest.conf package.
 7.	Find the `CLIENT_ID` string and set its value to the client id you registered in Azure.
