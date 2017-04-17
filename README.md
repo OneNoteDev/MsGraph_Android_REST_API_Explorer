@@ -139,7 +139,8 @@ Microsoft account application registration
 
 1.	Go to the [Windows Live application management site](http://go.microsoft.com/fwlink/?LinkID=144070).
 
-2.	Sign in by using your Windows Live ID. >Note: If this is your first visit to this site, you will see several pages that configure your Windows Live ID for use with the site.
+2.	Sign in by using your Windows Live ID. 
+>Note: If this is your first visit to this site, you will see several pages that configure your Windows Live ID for use with the site.
 
 3.	Click **Add an app**.
 
@@ -181,11 +182,13 @@ Once you've built the REST Explorer project you can run it on an emulator or dev
 
 1.	Run the project.
 
-2.	Click the authentication account that you want to sign in to. > Note: As of the production of this sample application, only AAD (organizational) accounts will be able to make requests to the OneNote endpoints on the Microsoft Graph API. Support for MSA accounts is upcoming.
+2.	Click the authentication account that you want to sign in to. 
+>Note: As of the production of this sample application, only AAD (organizational) accounts will be able to make requests to the OneNote endpoints on the Microsoft Graph API. Support for MSA accounts is upcoming.
 
 3.	Enter your credentials and sign in.
 
-4.	Click a REST operation in the main activity to show operation details. >Note: Some operations require input before they will run. For example, to update a page, you must first select a page to update. On these operations there will be a spinner, or text box, to select or enter required input for an operation.
+4.	Click a REST operation in the main activity to show operation details. 
+>Note: Some operations require input before they will run. For example, to update a page, you must first select a page to update. On these operations there will be a spinner, or text box, to select or enter required input for an operation.
 
 5.	Click the run button to start the REST operation and wait for the operation to finish.
 
