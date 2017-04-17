@@ -71,11 +71,11 @@ You can explore the following operations for OneNote:
 Change History
 --------------
 
-April 2017* Requests now target the Microsoft Graph API.
+April 2017 - Requests now target the Microsoft Graph API.
 
-August 2015* Add "Create section group" and "Create section in a section group" calls.
+August 2015 - Add "Create section group" and "Create section in a section group" calls.
 
-July 2015:* Initial release.
+July 2015: - Initial release.
 
 Device requirements
 -------------------
@@ -84,7 +84,7 @@ To run the REST Explorer project, your device must meet the following requiremen
 
 ### Prerequisites
 
-To use the Microsoft Graph OneNote REST API Explorer for Android, you need the following:* The latest version of [Android Studio](http://developer.android.com/sdk/index.html).* The [Gradle](http://www.gradle.org) build automation system version 2.3.1 or later.* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&DL=DEVELOPERPACK&ali=1#0) that includes the resources you need to start building Office 365 apps.* [Java Development Kit (JDK) 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).* A registered Azure application with a client id and redirect URI value. The application must have the following permissions: * View and modify OneNote notebooks in your organization * View and modify OneNote notebooks * Create pages in OneNote notebooks * Sign you in and read your profile * Access your organization's directory * A registered Microsoft application with a client id.
+To use the Microsoft Graph OneNote REST API Explorer for Android, you need the following: - The latest version of [Android Studio](http://developer.android.com/sdk/index.html). - The [Gradle](http://www.gradle.org) build automation system version 2.3.1 or later. - An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&DL=DEVELOPERPACK&ali=1#0) that includes the resources you need to start building Office 365 apps. - [Java Development Kit (JDK) 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). - A registered Azure application with a client id and redirect URI value. The application must have the following permissions: - View and modify OneNote notebooks in your organization - View and modify OneNote notebooks - Create pages in OneNote notebooks - Sign you in and read your profile - Access your organization's directory - A registered Microsoft application with a client id.
 
 Azure client application registration
 -------------------------------------
@@ -142,14 +142,22 @@ Configure the project
 ---------------------
 
 1.	Download or clone the [Microsoft Graph OneNote REST API Explorer for Android](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer).
+
 2.	Start Android Studio.
+
 3.	From the **Welcome to Android Studio** dialog box, choose **Import project (Eclipse ADT, Gradle, etc)**.
+
 4.	Select the **settings.gradle** file in the **MSGraph_OneNoteApiSampleAndroid** folder and click **OK**.
-5.	Respond to the dialog ("Gradle Sync: Gradle settings for this project are not configured yet. Would you like the project to use the Gradle wrapper? ") by clicking the **OK** button to use the Gradle wrapper.
-6.	Open the ServiceConstants.java file in the com.microsoft.o365_android_onenote_rest.conf package.
-7.	Find the `CLIENT_ID` string and set its value to the client id you registered in Azure.
-8.	Find the `REDIRECT_URI` string and set its value to the redirect URI you registered in Azure.
-9.	Find the `MSA_CLIENT_ID` string and set its value to the client id you registered for your app in your Microsoft Account.
+
+5.	Respond to the dialog ("Gradle Sync: Gradle settings for this project are not configured yet. Would you like the project to use the Gradle wrapper?") by clicking the **OK** button to use the Gradle wrapper.
+
+6.	Open the ServiceConstants.java file in the app/java/com.microsoft.o365_android_onenote_rest/conf directory.
+
+7.	Find the `CLIENT_ID` string and set its value to the Application ID for the application that you registered in Azure.
+
+8.	Find the `REDIRECT_URI` string and set its value to the redirect URI for the application that you registered in Azure.
+
+9.	Find the `MSA_CLIENT_ID` string and set its value to the Application ID for the application that you registered for your app in your Microsoft Account.
 
 Run the project
 ---------------
@@ -157,8 +165,11 @@ Run the project
 Once you've built the REST Explorer project you can run it on an emulator or device.
 
 1.	Run the project.
-2.	Click the authentication account that you want to sign in to.
-3.	Enter your credentials.
+
+2.	Click the authentication account that you want to sign in to. > Note: As of the production of this sample application, only AAD (organizational) accounts will be able to make requests to the OneNote endpoints on the Microsoft Graph API. Support for MSA accounts is upcoming.
+
+3.	Enter your credentials and sign in.
+
 4.	Click a REST operation in the main activity to show operation details. >Note: Some operations require input before they will run. For example, to update a page, you must first select a page to update. On these operations there will be a spinner, or text box, to select or enter required input for an operation.
 
 5.	Click the run button to start the REST operation and wait for the operation to finish.
@@ -172,7 +183,7 @@ Once you've built the REST Explorer project you can run it on an emulator or dev
 Understand the code
 -------------------
 
-The REST API Explorer project uses these classes to manage interactions with OneNote for Enterprise and consumer OneNote:
+The REST API Explorer project uses these classes to manage interactions with OneNote for Enterprise and consumer OneNote resources:
 
 ### Sample project organization
 
@@ -187,31 +198,31 @@ The REST API explorer project is comprised of four modules. The modular design a
 
 ### Snippet classes
 
-A snippet runs a single REST operation and returns the results. Snippets are found in the [app](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/app) module. Snippets set the state required to make the calls on the OneNote service classes described below. Where necessary, a snippet class gets the notebooks, sections, or pages to load the spinner control shown on the snippet detail fragment for a given REST operation.* [`NotebookSnippet`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/NotebookSnippet.java)* [`SectionGroupSnippet`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/SectionGroupSnippet.java)* [`SectionSnippet`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/SectionSnippet.java)* [`PagesSnippet`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/PagesSnippet.java)* [`AbstractSnippet`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/AbstractSnippet.java)
+A snippet runs a single REST operation and returns the results. Snippets are found in the [app](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/app) module. Snippets set the state required to make the calls on the OneNote service classes described below. Where necessary, a snippet class gets the notebooks, sections, or pages to load the spinner control shown on the snippet detail fragment for a given REST operation. - [`NotebookSnippet`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/NotebookSnippet.java) - [`SectionGroupSnippet`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/SectionGroupSnippet.java) - [`SectionSnippet`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/SectionSnippet.java) - [`PagesSnippet`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/PagesSnippet.java) - [`AbstractSnippet`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/app/src/main/java/com/microsoft/o365_android_onenote_rest/snippet/AbstractSnippet.java)
 
 ### OneNote API service classes
 
-These classes are found in the [onenoteapi](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/onenoteapi) module and make the Retrofit library calls that generate the REST queries and handle operation results. These service classes are consumed by the snippets.* [`NotebooksService`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/NotebooksService.java)* [`SectionGroupsService`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/SectionGroupsService.java)* [`SectionsService`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/SectionsService.java)* [`PagesService`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/PagesService.java)
+These classes are found in the [onenoteapi](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/onenoteapi) module and make the Retrofit library calls that generate the REST queries and handle operation results. These service classes are consumed by the snippets. - [`NotebooksService`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/NotebooksService.java) - [`SectionGroupsService`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/SectionGroupsService.java) - [`SectionsService`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/SectionsService.java) - [`PagesService`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenoteapi/src/main/java/com/microsoft/onenoteapi/service/PagesService.java)
 
 ### Value object classes
 
-These classes are found in the [onenotevos](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/onenotevos) module. The value object classes describe JSON payloads as objects.
+These classes are found in the [onenotevos](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/onenotevos) module. The value object classes describe JSON payloads as objects.
 
--	[`BaseVO`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/BaseVO.java). The superclass for other value objects.
--	[`Envelope`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Envelope.java). A collection of individual notebook, section, section group, or page objects returned in GET request.
--	[`Links`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Links.java). The collection of URLs returned in the body of a notebook, section, or page.
--	[`Notebook`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Notebook.java). A OneNote notebook.
--	[`Page`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Page.java). A OneNote page.
--	[`Section`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Section.java). A OneNote section.
--	[`SectionGroup`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/SectionGroup.java). A OneNote section group.
+-	[`BaseVO`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/BaseVO.java). The superclass for other value objects.
+-	[`Envelope`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Envelope.java). A collection of individual notebook, section, section group, or page objects returned in GET request.
+-	[`Links`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Links.java). The collection of URLs returned in the body of a notebook, section, or page.
+-	[`Notebook`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Notebook.java). A OneNote notebook.
+-	[`Page`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Page.java). A OneNote page.
+-	[`Section`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Section.java). A OneNote section.
+-	[`SectionGroup`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/SectionGroup.java). A OneNote section group.
 
 ### Authentication classes for Office 365 business accounts
 
-The authentication classes are found in the [O365-Auth](https://github.com/OneNoteDev/Android-REST-API-Explorer/tree/master/O365-auth) module. These classes use the [Microsoft Azure Active Directory Library (ADAL) for Android](https://github.com/AzureAD/azure-activedirectory-library-for-android) to connect to a business version of Office 365 such as Office 365 Enterprise.
+The authentication classes are found in the [O365-Auth](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/tree/master/O365-auth) module. These classes use the [Microsoft Azure Active Directory Library (ADAL) for Android](https://github.com/AzureAD/azure-activedirectory-library-for-android) to connect to a business version of Office 365 such as Office 365 Enterprise.
 
--	[`AuthenticationManager`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AuthenticationManager.java). Encapsulates user connect and disconnect logic in addition to Azure app authorization.
--	[`AzureADModule`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AzureADModule.java). Authentication helper class.
--	[`AzureAppCompatActivity`](https://github.com/OneNoteDev/Android-REST-API-Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AzureAppCompatActivity.java). Dependency injection helper.
+-	[`AuthenticationManager`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AuthenticationManager.java). Encapsulates user connect and disconnect logic in addition to Azure app authorization.
+-	[`AzureADModule`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AzureADModule.java). Authentication helper class.
+-	[`AzureAppCompatActivity`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/O365-auth/src/main/java/com/microsoft/AzureAppCompatActivity.java). Dependency injection helper.
 
 ### Authentication for Office 365 personal accounts
 
@@ -230,7 +241,7 @@ Authentication for logging in with a Microsoft Account to a personal version of 
 Questions and comments
 ----------------------
 
-We'd love to get your feedback about the OneNote REST API Explorer for Android sample. You can send your feedback to us in the [Issues](https://github.com/OneNoteDev/Android-REST-API-Explorer/issues) section of this repository. <br/> General questions about Office 365 development should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
+We'd love to get your feedback about the Microsoft Graph OneNote REST API Explorer for Android sample. You can send your feedback to us in the [Issues](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/issues) section of this repository. <br/> General questions about Office 365 development should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
 
 Contributing
 ------------
@@ -240,15 +251,18 @@ You will need to sign a [Contributor License Agreement](https://cla.microsoft.co
 Additional resources
 --------------------
 
--	[OneNote APIs documentation](https://msdn.microsoft.com/en-us/library/office/dn575420.aspx)
--	[OneNote developer center](http://dev.onenote.com/)
--	[Microsoft Office 365 API Tools](https://visualstudiogallery.msdn.microsoft.com/a15b85e6-69a7-4fdf-adda-a38066bb5155)
--	[Office Dev Center](http://dev.office.com/)
--	[Office 365 APIs starter projects and code samples](http://msdn.microsoft.com/en-us/office/office365/howto/starter-projects-and-code-samples)
+-	Visit the [dev.onenote.com](http://dev.onenote.com) Dev Center
+-	Contact us on [StackOverflow (tagged OneNote)](http://go.microsoft.com/fwlink/?LinkID=390182)
+-	Follow us on [Twitter @onenotedev](http://www.twitter.com/onenotedev)
+-	Read our [OneNote Developer blog](http://go.microsoft.com/fwlink/?LinkID=390183)
+-	Explore the API using the [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
+-	[API Reference](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/notes) documentation
+-	[Known Issues](https://developer.microsoft.com/en-us/graph/docs/overview/release_notes)
+-	[Getting Started](https://developer.microsoft.com/en-us/graph/docs/get-started/get-started) with the Microsoft Graph API
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 Copyright
 ---------
 
-Copyright (c) 2015 Microsoft. All rights reserved.
+Copyright (c) 2017 Microsoft. All rights reserved.
