@@ -120,7 +120,7 @@ Azure client application registration
 
 8.	Click on the **Windows Azure Active Directory** API.
 
-9.	In the **Select Permissions** tab, under **Delegated Permissions**, select the following permissions:
+9.	In the **Select Permissions** tab, under **Delegated Permissions**, select the following permissions and then **Save**:
 
 	-	Sign in and read user profile
 	-	Access the directory as the signed-in user
@@ -129,7 +129,7 @@ Azure client application registration
 
 11.	Click **Select an API** and search for **Microsoft Graph**. Click **Select**.
 
-12.	Under the **Select Permissions** tab, in the **Delegated permissions** section, add the following permissions:
+12.	Under the **Select Permissions** tab, in the **Delegated permissions** section, add the following permissions and then **Save**:
 
 	-	Read and write notebooks that the user can access
 	-	View users' basic profile.
