@@ -148,7 +148,7 @@ Microsoft account application registration
 
 5.	There are many settings for your app, but to make it work with this sample, you need to make the following change:
 
-	-	In the **Platforms** section, click **Add Platform** followed by **Mobile Application**.
+	-	In the **Platforms** section, click **Add Platform** followed by **Native Application**.
 
 6.	Once you are satisfied with your app settings, click **Save**.
 
