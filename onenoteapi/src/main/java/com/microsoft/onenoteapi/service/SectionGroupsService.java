@@ -28,7 +28,7 @@ public interface SectionGroupsService {
      * @param search
      * @param callback
      */
-    @GET("/{version}/me/notes/sectionGroups")
+    @GET("/{version}/me/onenote/sectionGroups")
     void getSectionGroups(
             @Path("version") String version,
             @Query("filter") String filter,
@@ -40,7 +40,7 @@ public interface SectionGroupsService {
             Callback<Envelope<SectionGroup>> callback
     );
 
-    @GET("/{version}/me/notes/notebooks/{id}/sectionGroups")
+    @GET("/{version}/me/onenote/notebooks/{id}/sectionGroups")
     void getSectionGroupsForNotebook(
             @Path("version") String version,
             @Path("id") String id,
@@ -63,7 +63,7 @@ public interface SectionGroupsService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/notebooks/{id}/sectiongroups")
+    @POST("/{version}/me/onenote/notebooks/{id}/sectiongroups")
     void postSectionGroupInNotebook(
             @Path("version") String version,
             @Header("Content-type") String contentTypeHeader,
@@ -82,7 +82,7 @@ public interface SectionGroupsService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/sectiongroups/{id}/sectiongroups")
+    @POST("/{version}/me/onenote/sectiongroups/{id}/sectiongroups")
     void postSectionGroupInSectionGroup(
             @Path("version") String version,
             @Header("Content-type") String contentTypeHeader,

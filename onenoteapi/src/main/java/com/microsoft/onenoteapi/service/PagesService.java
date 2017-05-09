@@ -35,7 +35,7 @@ public interface PagesService {
      * @param search
      * @param callback
      */
-    @GET("/{version}/me/notes/pages")
+    @GET("/{version}/me/onenote/pages")
     void getPages(
             @Path("version") String version,
             @Query("filter") String filter,
@@ -55,7 +55,7 @@ public interface PagesService {
      * @param id
      * @param callback
      */
-    @GET("/{version}/me/notes/pages/{id}")
+    @GET("/{version}/me/onenote/pages/{id}")
     void getPageById(
             @Path("version") String version,
             @Path("id") String id,
@@ -67,7 +67,7 @@ public interface PagesService {
      * @param id
      * @param callback
      */
-    @GET("/{version}/me/notes/pages/{id}/content")
+    @GET("/{version}/me/onenote/pages/{id}/content")
     void getPageContentById(
             @Path("version") String version,
             @Path("id") String id,
@@ -89,7 +89,7 @@ public interface PagesService {
      * @param search
      * @param callback
      */
-    @GET("/{version}/me/notes/sections/{sectionId}/pages")
+    @GET("/{version}/me/onenote/sections/{sectionId}/pages")
     void getSectionPages(
             @Path("version") String version,
             @Path("sectionId") String sectionId,
@@ -110,7 +110,7 @@ public interface PagesService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/sections/{id}/pages")
+    @POST("/{version}/me/onenote/sections/{id}/pages")
     void postPages(
             @Header("Content-type") String contentTypeHeader,
             @Path("version") String version,
@@ -127,7 +127,7 @@ public interface PagesService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/pages")
+    @POST("/{version}/me/onenote/pages")
     void postPagesInSection(
             @Header("Content-type") String contentTypeHeader,
             @Path("version") String version,
@@ -146,7 +146,7 @@ public interface PagesService {
      * @param callback
      */
     @Multipart
-    @POST("/{version}/me/notes/sections/{sectionId}/pages")
+    @POST("/{version}/me/onenote/sections/{sectionId}/pages")
     void postMultiPartPages(
             @Path("version") String version,
             @Path("sectionId") String sectionId,
@@ -161,7 +161,7 @@ public interface PagesService {
      * @param pageId
      * @param callback
      */
-    @DELETE("/{version}/me/notes/pages/{pageId}")
+    @DELETE("/{version}/me/onenote/pages/{pageId}")
     void deletePage(
             @Path("version") String version,
             @Path("pageId") String pageId,
@@ -181,7 +181,7 @@ public interface PagesService {
      * @param body
      * @param callback
      */
-    @PATCH("/{version}/me/notes/pages/{pageId}/content")
+    @PATCH("/{version}/me/onenote/pages/{pageId}/content")
     void patchPage(
             @Header("Accept-Encoding") String encoding,
             @Path("version") String version,

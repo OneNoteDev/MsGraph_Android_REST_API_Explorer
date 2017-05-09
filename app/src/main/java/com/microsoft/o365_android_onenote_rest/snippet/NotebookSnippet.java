@@ -70,7 +70,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                  */
                 new NotebookSnippet(get_notebooks_expand) {
                     /*
-                    https://graph.microsoft.com/beta/me/notes/notebooks?$expand=sections,sectionGroups($expand=sections)
+                    https://graph.microsoft.com/v1.0/me/onenote/notebooks?$expand=sections,sectionGroups($expand=sections)
                      */
                     @Override
                     public void request(NotebooksService service, Callback callback) {

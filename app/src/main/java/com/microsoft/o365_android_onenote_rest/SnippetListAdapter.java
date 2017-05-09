@@ -17,6 +17,7 @@ public class SnippetListAdapter extends BaseAdapter {
 
     public static final String UNAVAILABLE = "unavailable";
     public static final String BETA = "beta";
+    public static final String V1 = "v1.0";
     private Context mContext;
     private LayoutInflater mLayoutInflater;
 
@@ -66,6 +67,10 @@ public class SnippetListAdapter extends BaseAdapter {
             }
             if (hasStatus(clickedSnippet, BETA)) {
                 betaIndicator.setText(R.string.beta);
+                betaIndicator.setVisibility(View.VISIBLE);
+            }
+            if (hasStatus(clickedSnippet, V1)) {
+                betaIndicator.setText(R.string.v1_0);
                 betaIndicator.setVisibility(View.VISIBLE);
             }
         }

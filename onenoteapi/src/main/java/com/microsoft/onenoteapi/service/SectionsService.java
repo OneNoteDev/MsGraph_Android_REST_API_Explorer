@@ -31,7 +31,7 @@ public interface SectionsService {
      * @param search
      * @param callback
      */
-    @GET("/{version}/me/notes/sections")
+    @GET("/{version}/me/onenote/sections")
     void getSections(
             @Path("version") String version,
             @Query("filter") String filter,
@@ -50,14 +50,14 @@ public interface SectionsService {
      * @param id
      * @param callback
      */
-    @GET("/{version}/me/notes/sections/{id}")
+    @GET("/{version}/me/onenote/sections/{id}")
     void getSectionById(
             @Path("version") String version,
             @Path("id") String id,
             Callback<Envelope<Section>> callback
     );
 
-    @GET("/{version}/me/notes/notebooks/{notebookId}/sections")
+    @GET("/{version}/me/onenote/notebooks/{notebookId}/sections")
     void getNotebookSections(
             @Path("version") String version,
             @Path("notebookId") String Id,
@@ -79,7 +79,7 @@ public interface SectionsService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/notebooks/{id}/sections")
+    @POST("/{version}/me/onenote/notebooks/{id}/sections")
     void postSection(
             @Path("version") String version,
             @Header("Content-type") String contentTypeHeader,
@@ -97,7 +97,7 @@ public interface SectionsService {
      * @param content
      * @param callback
      */
-    @POST("/{version}/me/notes/sectiongroups/{id}/sections")
+    @POST("/{version}/me/onenote/sectiongroups/{id}/sections")
     void postSectionInSectionGroup(
             @Path("version") String version,
             @Header("Content-type") String contentTypeHeader,
@@ -113,7 +113,7 @@ public interface SectionsService {
      * @param sectionId
      * @param callback
      */
-    @DELETE("/{version}/me/notes/sections/{sectionId}")
+    @DELETE("/{version}/me/onenote/sections/{sectionId}")
     void deleteSection(
             @Path("version") String version,
             @Path("sectionId") String sectionId,
