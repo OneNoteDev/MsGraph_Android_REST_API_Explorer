@@ -144,7 +144,6 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                 },
 
                 /*
-                 * Gets a notebook in your personal OneDrive notebook folder by name
                  * For example: the Microsoft-my.sharepoint.com/personal/denisd_microsoft_com/documents/Test_Notebook
                  * location for Denis D. holds a notebook called "Test_Notebook"
                  */
