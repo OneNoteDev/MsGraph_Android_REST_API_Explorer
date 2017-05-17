@@ -110,7 +110,7 @@ public abstract class SectionSnippet<Result>
                     public void request(SectionsService service, Callback<Envelope<Section>> callback) {
                         service.getSections(
                                 getVersion(),
-                                "name eq '" + callback
+                                "displayName eq '" + callback
                                         .getParams()
                                         .get(SnippetDetailFragment.ARG_TEXT_INPUT)
                                         + "'",

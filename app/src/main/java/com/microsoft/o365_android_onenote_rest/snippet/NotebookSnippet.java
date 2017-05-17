@@ -152,7 +152,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                     public void request(NotebooksService service, Callback callback) {
                         service.getNotebooks(
                                 getVersion(),
-                                "name eq '" + callback
+                                "displayName eq '" + callback
                                         .getParams()
                                         .get(SnippetDetailFragment.ARG_TEXT_INPUT)
                                         + "'",
