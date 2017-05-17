@@ -2,7 +2,7 @@
     <string name="app_name">OneNote REST API Explorer</string>
     <string name="title_snippet_detail">Snippet Detail</string>
     <string name="beta">BETA</string>
-    <string name="v1.0">v1.0</string>
+    <string name="v1_0">v1.0</string>
     <string name="run">Run</string>
     <string name="req_url">Request URL</string>
     <string name="req_headers">Request Headers</string>
