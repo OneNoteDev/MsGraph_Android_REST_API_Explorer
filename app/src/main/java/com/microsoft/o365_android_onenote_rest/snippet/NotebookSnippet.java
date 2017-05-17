@@ -175,8 +175,8 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                         service.getNotebooks(
                                 getVersion(),
                                 null, // filter
-                                "name asc", // orderby
-                                "id,name", // select
+                                "displayName asc", // orderby
+                                "id,displayName", // select
                                 null, //expand
                                 null, // top
                                 null, // skip
