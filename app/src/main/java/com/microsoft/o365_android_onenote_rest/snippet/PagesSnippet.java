@@ -159,7 +159,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                         service.postPagesInSection(
                                 "text/html; encoding=utf8",
                                 getVersion(),
-                                section.name,
+                                section.displayName,
                                 typedString,
                                 callback
                         );
@@ -891,8 +891,8 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                         Section[] sections = envelope.value;
                         String[] sectionNames = new String[sections.length];
                         for (int i = 0; i < sections.length; i++) {
-                            sectionNames[i] = sections[i].name;
-                            sectionMap.put(sections[i].name, sections[i]);
+                            sectionNames[i] = sections[i].displayName;
+                            sectionMap.put(sections[i].displayName, sections[i]);
                         }
                         callback.success(sectionNames, response);
 

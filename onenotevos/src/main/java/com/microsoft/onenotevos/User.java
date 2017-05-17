@@ -1,41 +1,12 @@
 /*
 *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
 */
-
 package com.microsoft.onenotevos;
 
-import com.google.gson.annotations.SerializedName;
-
-import org.joda.time.DateTime;
-
-public abstract class BaseVO {
-
-    public Boolean isDefault;
-
-    public Boolean isShared;
-
-    public DateTime createdDateTime;
-
-    public String displayName;
-
-    public DateTime lastModifiedTime;
-
-    public Links links;
-
-    public User createdBy;
-
-    public String createdByAppId;
+public class User {
 
     public String id;
-
-    public User lastModifiedBy;
-
-    public String self;
-
-    public String userRole;
-
-    @SerializedName("@odata.context")
-    public String odataContext;
+    public String displayName;
 }
 // *********************************************************
 //
@@ -65,3 +36,4 @@ public abstract class BaseVO {
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 // *********************************************************
+

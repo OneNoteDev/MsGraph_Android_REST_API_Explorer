@@ -210,7 +210,7 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                     //The body sets the section name
                     TypedString createNewSection(String sectionName) {
                         JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty("name", sectionName);
+                        jsonObject.addProperty("displayName", sectionName);
                         return new TypedString(jsonObject.toString()) {
                             @Override
                             public String mimeType() {
@@ -261,8 +261,8 @@ public abstract class NotebookSnippet<Result> extends AbstractSnippet<NotebooksS
                         Notebook[] notebooks = notebookEnvelope.value;
                         String[] bookNames = new String[notebooks.length];
                         for (int i = 0; i < notebooks.length; i++) {
-                            bookNames[i] = notebooks[i].name;
-                            notebookMap.put(notebooks[i].name, notebooks[i]);
+                            bookNames[i] = notebooks[i].displayName;
+                            notebookMap.put(notebooks[i].displayName, notebooks[i]);
                         }
                         callback.success(bookNames, response);
                     }
