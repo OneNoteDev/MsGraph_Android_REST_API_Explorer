@@ -242,6 +242,7 @@ These classes are found in the [onenotevos](https://github.com/OneNoteDev/MsGrap
 -	[`Page`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Page.java). A OneNote page.
 -	[`Section`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/Section.java). A OneNote section.
 -	[`SectionGroup`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/SectionGroup.java). A OneNote section group.
+-	[`User`](https://github.com/OneNoteDev/MsGraph_Android_REST_API_Explorer/blob/master/onenotevos/src/main/java/com/microsoft/onenotevos/User.java). A OneNote user.
 
 ### Authentication classes for Office 365 business accounts
 
