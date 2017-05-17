@@ -29,7 +29,7 @@ public interface NotebooksService {
      * @param skip
      * @param callback
      */
-    @GET("/{version}/me/notes/notebooks")
+    @GET("/{version}/me/onenote/notebooks")
     void getNotebooks(
             @Path("version") String version,
             @Query("$filter") String filter,
@@ -54,7 +54,7 @@ public interface NotebooksService {
      * @param skip
      * @param callback
      */
-    @GET("/{version}/me/notes/notebooks")
+    @GET("/{version}/me/onenote/notebooks")
     void getSharedNotebooks(
             @Path("version") String version,
             @Query("$filter") String filter,
@@ -73,7 +73,7 @@ public interface NotebooksService {
      * @param id
      * @param callback
      */
-    @GET("/{version}/me/notes/notebooks/{id}")
+    @GET("/{version}/me/onenote/notebooks/{id}")
     void getNotebookById(
             @Path("version") String version,
             @Path("id") String id,
@@ -89,7 +89,7 @@ public interface NotebooksService {
      * @param body
      * @param callback
      */
-    @POST("/{version}/me/notes/notebooks")
+    @POST("/{version}/me/onenote/notebooks")
     void postNotebook(
             @Path("version") String version,
             @Header("Content-type") String contentTypeHeader,

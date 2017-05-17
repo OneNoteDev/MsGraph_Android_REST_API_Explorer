@@ -116,7 +116,7 @@ public abstract class SectionGroupSnippet<Result>
                     //The body sets the section name
                     TypedString createSectionGroup(String sectionName) {
                         JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty("name", sectionName);
+                        jsonObject.addProperty("displayName", sectionName);
                         return new TypedString(jsonObject.toString()) {
                             @Override
                             public String mimeType() {
@@ -162,7 +162,7 @@ public abstract class SectionGroupSnippet<Result>
                     //The body sets the section name
                     TypedString createSectionGroupInSectionGroup(String sectionName) {
                         JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty("name", sectionName);
+                        jsonObject.addProperty("displayName", sectionName);
                         return new TypedString(jsonObject.toString()) {
                             @Override
                             public String mimeType() {
@@ -214,8 +214,8 @@ public abstract class SectionGroupSnippet<Result>
                         Notebook[] notebooks = notebookEnvelope.value;
                         String[] bookNames = new String[notebooks.length];
                         for (int i = 0; i < notebooks.length; i++) {
-                            bookNames[i] = notebooks[i].name;
-                            notebookMap.put(notebooks[i].name, notebooks[i]);
+                            bookNames[i] = notebooks[i].displayName;
+                            notebookMap.put(notebooks[i].displayName, notebooks[i]);
                         }
                         callback.success(bookNames, response);
                     }
@@ -250,8 +250,8 @@ public abstract class SectionGroupSnippet<Result>
                         SectionGroup[] sectionGroups = sectionGroupEnvelope.value;
                         String[] sectionGroupNames = new String[sectionGroups.length];
                         for (int i = 0; i < sectionGroups.length; i++) {
-                            sectionGroupNames[i] = sectionGroups[i].name;
-                            sectionGroupMap.put(sectionGroups[i].name, sectionGroups[i]);
+                            sectionGroupNames[i] = sectionGroups[i].displayName;
+                            sectionGroupMap.put(sectionGroups[i].displayName, sectionGroups[i]);
                         }
                         callback.success(sectionGroupNames, response);
                     }

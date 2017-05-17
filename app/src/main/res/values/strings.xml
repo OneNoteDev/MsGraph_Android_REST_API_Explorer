@@ -2,6 +2,7 @@
     <string name="app_name">OneNote REST API Explorer</string>
     <string name="title_snippet_detail">Snippet Detail</string>
     <string name="beta">BETA</string>
+    <string name="v1_0">v1.0</string>
     <string name="run">Run</string>
     <string name="req_url">Request URL</string>
     <string name="req_headers">Request Headers</string>
@@ -23,11 +24,10 @@
     <string name="token_err_title">Failed to acquire api token</string>
     <string name="token_err_msg">Office 365 has either failed to refresh the access token or is unavailable. To view the extended stacktrace, click \'Dismiss\' then view the Response Body section</string>
     <string name="disconnect">Disconnect</string>
-    <string name="wl_signin">Single sign-in behavior. With single sign-in, users who are already signed in to Live Connect are also signed in to your website.</string>
-    <string name="wl_offline_access">The ability of an app to read and update a user\'s info at any time. Without this scope, an app can access the user\'s info only while the user is signed in to Live Connect and is using your app.</string>
-    <string name="on_create">Permission to view a list of the user’s OneNote notebooks and create new pages, but not to view or edit existing pages. Gives an app the ability to enumerate the user’s notebook hierarchy and create pages in any location.</string>
-    <string name="on_update">Permission to create, view, and modify any content in the user’s OneNote notebooks and pages.</string>
-    <string name="on_base">Permission to view OneNote notebooks and pages but not to modify them.</string>
+    <string name="offline_access_permission">Allows the app to read and update user data, even when they are not currently using the app.</string>
+    <string name="open_id">Allows users to sign in to the app with their work or school accounts and allows the app to see basic user profile information.</string>
+    <string name="NotesReadWriteAll">Allows the app to read and write the contents of all notebooks and sections that the signed-in user can access.  It cannot access password protected sections.</string>
+    <string name="NotesReadWrite">Allows the app to read the titles of notebooks and sections, read all pages, write all pages and create new pages on behalf of the signed-in user.  It cannot access password protected sections.</string>
     <string name="unavailable">unavailable</string>
     <string name="err_setup">Error preparing snippet</string>
     <string name="err_setup_msg">This snippet requires a notebook, section, group, or page before it will run. For example if you are deleting a page, you must first have a page to delete. Check that the appropriate item exists before running this snippet.</string>

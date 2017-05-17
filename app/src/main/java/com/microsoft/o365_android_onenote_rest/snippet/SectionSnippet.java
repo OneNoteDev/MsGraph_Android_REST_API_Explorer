@@ -83,7 +83,7 @@ public abstract class SectionSnippet<Result>
 
                 /*
                  * Gets all of the sections in the user's default notebook
-                 * HTTP GET https://graph.microsoft.com/beta/me/notes/sections
+                 * HTTP GET https://graph.microsoft.com/v1.0/me/onenote/sections
                  */
                 new SectionSnippet<Envelope<Section>>(get_all_sections) {
                     @Override
@@ -102,7 +102,7 @@ public abstract class SectionSnippet<Result>
 
                 /*
                  * Gets any section whose title matches the given title
-                 * HTTP GET https://graph.microsoft.com/beta/me/notes/sections?filter=name+eq+%27{1}%27
+                 * HTTP GET https://graph.microsoft.com/v1.0/me/onenote/sections?filter=name+eq+%27{1}%27
                  */
                 new SectionSnippet<Envelope<Section>>(sections_specific_name, Input.Text) {
 
@@ -166,7 +166,7 @@ public abstract class SectionSnippet<Result>
                     //The body sets the section name
                     TypedString createNewSection(String sectionName) {
                         JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty("name", sectionName);
+                        jsonObject.addProperty("displayName", sectionName);
                         return new TypedString(jsonObject.toString()) {
                             @Override
                             public String mimeType() {
@@ -212,7 +212,7 @@ public abstract class SectionSnippet<Result>
                     //The body sets the section name
                     TypedString createSectionInSectionGroup(String sectionName) {
                         JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty("name", sectionName);
+                        jsonObject.addProperty("displayName", sectionName);
                         return new TypedString(jsonObject.toString()) {
                             @Override
                             public String mimeType() {
@@ -264,8 +264,8 @@ public abstract class SectionSnippet<Result>
                         Notebook[] notebooks = notebookEnvelope.value;
                         String[] bookNames = new String[notebooks.length];
                         for (int i = 0; i < notebooks.length; i++) {
-                            bookNames[i] = notebooks[i].name;
-                            notebookMap.put(notebooks[i].name, notebooks[i]);
+                            bookNames[i] = notebooks[i].displayName;
+                            notebookMap.put(notebooks[i].displayName, notebooks[i]);
                         }
                         callback.success(bookNames, response);
                     }
@@ -300,8 +300,8 @@ public abstract class SectionSnippet<Result>
                         SectionGroup[] sectionGroups = sectionGroupEnvelope.value;
                         String[] sectionGroupNames = new String[sectionGroups.length];
                         for (int i = 0; i < sectionGroups.length; i++) {
-                            sectionGroupNames[i] = sectionGroups[i].name;
-                            sectionGroupMap.put(sectionGroups[i].name, sectionGroups[i]);
+                            sectionGroupNames[i] = sectionGroups[i].displayName;
+                            sectionGroupMap.put(sectionGroups[i].displayName, sectionGroups[i]);
                         }
                         callback.success(sectionGroupNames, response);
                     }
@@ -337,8 +337,8 @@ public abstract class SectionSnippet<Result>
                         Section[] sections = envelope.value;
                         String[] sectionNames = new String[sections.length];
                         for (int i = 0; i < sections.length; i++) {
-                            sectionNames[i] = sections[i].name;
-                            sectionMap.put(sections[i].name, sections[i]);
+                            sectionNames[i] = sections[i].displayName;
+                            sectionMap.put(sections[i].displayName, sections[i]);
                         }
                         callback.success(sectionNames, response);
 

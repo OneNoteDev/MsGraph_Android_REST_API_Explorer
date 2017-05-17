@@ -33,7 +33,7 @@ public abstract class AbstractSnippet<Service, Result> {
     private static final int sNameIndex = 0;
     private static final int sDescIndex = 1;
     private static final int sUrlIndex = 2;
-    private static final int sO365VersionIndex = 3;
+    private static final int sO365VersionIndex = 4;
     private static final int sMSAVersionIndex = 4;
 
 

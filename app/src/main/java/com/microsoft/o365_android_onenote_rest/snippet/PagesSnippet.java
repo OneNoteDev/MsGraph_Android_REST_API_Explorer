@@ -77,7 +77,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * POST a new OneNote page in the section picked by the user
-                 * HTTP POST https://graph.microsoft.com/beta/me/notes/sections/{id}/pages
+                 * HTTP POST https://graph.microsoft.com/v1.0/me/onenote/sections/{id}/pages
                  * @see http://dev.onenote.com/docs#/reference/post-pages
                  */
                 new PagesSnippet<Page>(create_simple_page, Input.Spinner) {
@@ -123,7 +123,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
 
                 /*
                  * Creates a new page in a section referenced by title instead of Id
-                 * HTTP POST https://graph.microsoft.com/beta/me/notes/pages{?sectionName}
+                 * HTTP POST https://graph.microsoft.com/v1.0/me/onenote/pages{?sectionName}
                  * @see http://dev.onenote.com/docs#/reference/post-pages/v10menotespagessectionname
                  */
                 new PagesSnippet<Envelope<Page>>(create_page_under_named_section, Input.Spinner) {
@@ -159,7 +159,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                         service.postPagesInSection(
                                 "text/html; encoding=utf8",
                                 getVersion(),
-                                section.name,
+                                section.displayName,
                                 typedString,
                                 callback
                         );
@@ -484,7 +484,7 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                         };
                         OneNotePartsMap oneNotePartsMap = new OneNotePartsMap(presentationString);
 
-                        File imageFile = getImageFile("/res/drawable/attachment.pdf");
+                        File imageFile = getImageFile("/res/raw-en/attachment.pdf");
 
                         TypedFile typedFile = new TypedFile("application/pdf", imageFile);
                         oneNotePartsMap.put(pdfPartName, typedFile);
@@ -891,8 +891,8 @@ public abstract class PagesSnippet<Result> extends AbstractSnippet<PagesService,
                         Section[] sections = envelope.value;
                         String[] sectionNames = new String[sections.length];
                         for (int i = 0; i < sections.length; i++) {
-                            sectionNames[i] = sections[i].name;
-                            sectionMap.put(sections[i].name, sections[i]);
+                            sectionNames[i] = sections[i].displayName;
+                            sectionMap.put(sections[i].displayName, sections[i]);
                         }
                         callback.success(sectionNames, response);
 

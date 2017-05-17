@@ -5,19 +5,18 @@ package com.microsoft.o365_android_onenote_rest.model;
 
 import com.microsoft.o365_android_onenote_rest.application.SnippetApp;
 
-import static com.microsoft.o365_android_onenote_rest.R.string.on_base;
-import static com.microsoft.o365_android_onenote_rest.R.string.on_create;
-import static com.microsoft.o365_android_onenote_rest.R.string.on_update;
-import static com.microsoft.o365_android_onenote_rest.R.string.wl_offline_access;
-import static com.microsoft.o365_android_onenote_rest.R.string.wl_signin;
+import static com.microsoft.o365_android_onenote_rest.R.string.NotesReadWrite;
+import static com.microsoft.o365_android_onenote_rest.R.string.NotesReadWriteAll;
+import static com.microsoft.o365_android_onenote_rest.R.string.offline_access_permission;
+import static com.microsoft.o365_android_onenote_rest.R.string.open_id;
 
 public class Scope {
 
     public static final String DELIM = "\n---\n";
 
     public enum wl {
-        signin(wl_signin),
-        offline_access(wl_offline_access);
+        openid(open_id),
+        offline_access(offline_access_permission);
 
         public final String mDescription;
 
@@ -26,7 +25,7 @@ public class Scope {
         }
 
         public String getScope() {
-            return "wl." + name();
+            return name();
         }
 
         @Override
@@ -36,9 +35,8 @@ public class Scope {
     }
 
     public enum office {
-        onenote_create(on_create),
-        onenote_update(on_update),
-        onenote(on_base);
+        Notes_ReadWrite(NotesReadWrite),
+        Notes_ReadWrite_All(NotesReadWriteAll);
 
         public final String mDescription;
 
@@ -47,7 +45,7 @@ public class Scope {
         }
 
         public String getScope() {
-            return "office." + name();
+            return name().replace("_", ".");
         }
 
         @Override

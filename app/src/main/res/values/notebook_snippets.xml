@@ -37,7 +37,7 @@
 
     <string-array name="notebook_specific_name">
         <item>GET: Get notebooks with a specific name</item>
-        <item>Query for a list of all notebooks with a given name. This example shows how to use the \'$filter=name eq \'&lt;term&gt;\' query parameter. Please enter the case-sensitive full notebook name to look for in the TextBox above</item>
+        <item>Query for a list of all notebooks with a given name. This example shows how to use the \'$filter=displayName eq \'&lt;term&gt;\' query parameter. Please enter the case-sensitive full notebook name to look for in the TextBox above</item>
         <item>http://dev.onenote.com/docs#/reference/get-notebooks</item>
         <item>beta</item>
         <item>v1.0</item>
@@ -45,7 +45,7 @@
 
     <string-array name="notebook_selected_meta">
         <item>GET: Get sorted list of notebooks with selected metadata</item>
-        <item>Get a sorted list of notebooks using the $orderBy=name asc query parameter and only specific metadata in the response using the $select=id,name query parameter. $orderBy can be used to specify your custom sort order</item>
+        <item>Get a sorted list of notebooks using the $orderBy=displayName asc query parameter and only specific metadata in the response using the $select=id,displayName query parameter. $orderBy can be used to specify your custom sort order</item>
         <item>http://dev.onenote.com/docs#/reference/get-notebooks</item>
         <item>beta</item>
         <item>v1.0</item>
